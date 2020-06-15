@@ -5,3 +5,5 @@
 /.vs
 /ReactJsDemoWithAspNetCore/.vs/ReactJsDemoWithAspNetCore/v16
 /ReactJsDemoWithAspNetCore/ReactJsDemoWithAspNetCore/obj
+/ReactJsDemoWithAspNetCore/.vs/ReactJsDemoWithAspNetCore/config
+/ReactJsDemoWithAspNetCore/ReactJsDemoWithAspNetCore/bin/Debug/netcoreapp3.1
