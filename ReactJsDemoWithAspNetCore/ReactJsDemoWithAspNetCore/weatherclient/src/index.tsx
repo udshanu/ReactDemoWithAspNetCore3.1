@@ -2,53 +2,46 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-//import './index.css';
-//import App from './App';
-//import * as serviceWorker from './serviceWorker';
+////------------Introduction to Component--------//////////
+//Components are the building blocks of React application.
+//Allow us to split the user interface in to independent and reuseable pieces.
+//Component is combination of 3 things.(Template using html, User interactivity using JS, Applying styles using CSS).
+//Any React application segrigated into different application.(Header Component, NavigationBar Component, Content Component, Footer Component).
+//Conceptualy a component is a JS Class, That accept input as properties, returns react elements
+//Component can be created as a function component, Or as a class component.
+//Component name should start with capital letters.
 
-//ReactDOM.render(
-//  <React.StrictMode>
-//    <App />
-//  </React.StrictMode>,
-//  document.getElementById('root')
-//);
+//function DisplayEmployeeInfo(employee: any) {
+var DisplayEmployeeInfo = (employee: any) => {
+    return <div>
+        <h1>Employee Details...</h1>
+        <p>
+            <label>Employee Id: <b>{employee.Id}</b></label>
+        </p>
+        <p>
+            <label>Employee Name: <b>{employee.Name}</b></label>
+        </p>
+        <p>
+            <label>Employee Location: <b>{employee.Location}</b></label>
+        </p>
+        <p>
+            <label>Employee Salary: <b>{employee.Salary}</b></label>
+        </p>
 
-//// If you want your app to work offline and load faster, you can change
-//// unregister() to register() below. Note this comes with some pitfalls.
-//// Learn more about service workers: https://bit.ly/CRA-PWA
-//serviceWorker.unregister();
+        <DepartmentInfo DptName={employee.DptName} DptHeadName={employee.DptHeadName} ></DepartmentInfo>
+    </div>;
+};
 
-//Create element using JSX.
-//const element = <h1 className="testClass">Welcome to element episode of reactjs tutorial.</h1>;
+const DepartmentInfo = (dptinfo: any) => {
+    return <div>
+        <p>
+            <label>Department Name: <b>{dptinfo.DptName}</b></label>
+        </p>
+        <p>
+            <label>Department Head: <b>{dptinfo.DptHeadName}</b></label>
+        </p>
+    </div>;
+};
 
-//ReactDOM.render(element, document.getElementById("root"));
-
-//const newElement = <h1 className="testClass">Render multiple elements</h1>;
-
-//ReactDOM.render(newElement, document.getElementById("app"));
-
-//const element = (
-//    <div className="testClass">
-//        <h1>Welcome to element episode of reactjs tutorial.</h1>
-//        <h1>Render multiple elements in single root container</h1>
-//    </div>
-//);
-
-//ReactDOM.render(element, document.getElementById("root"));
-
-
-//Create element without using JSX.
-//const element = React.createElement("h1", null, "Welcome to element episode of reactjs tutorial.");
-//ReactDOM.render(element, document.getElementById("root"));
-
-const element = React.createElement("div", { className: "testClass" },
-    React.createElement("h1", null, "Welcome to element episode of reactjs tutorial."),
-    React.createElement("h1", null, "Render multiple elements in single root container Using 'React.createElement()'"),
-);
-
+const element = <DisplayEmployeeInfo Id="101" Name="Roshan" Location="Kurunegala" Salary="12345" DptName="UI dev" DptHeadName="Gunarathna"></DisplayEmployeeInfo>;
 ReactDOM.render(element, document.getElementById("root"));
-
-////////////////----------Note---------------///
-//When we create element using JSX we need buble compliler to compile html code. 
-//But if we create element without using JSX we do not need any complier.
-//JSX code converted to JS code using buble compiler.
